@@ -27,21 +27,21 @@ RSpec.describe Disbursement, type: :model do
       order = FactoryBot.create :order, :completed, amount: 20
       Disbursement.calculate_weekly_merchant
 
-      expect(Disbursement.find(order: order).amount).to eq (20*0.1)
+      expect(Disbursement.find(order: order).amount).to eq (0.2)
     end
 
     it "From 50 to 300" do
       order = FactoryBot.create :order, :completed, amount: 60
       Disbursement.calculate_weekly_merchant
 
-      expect(Disbursement.find(order: order).amount).to eq (60*0.095)
+      expect(Disbursement.find(order: order).amount).to eq (5.7)
     end
 
     it "300 or more" do
       order = FactoryBot.create :order, :completed, amount: 200
       Disbursement.calculate_weekly_merchant
 
-      expect(Disbursement.find(order: order).amount).to eq (200*0.085)
+      expect(Disbursement.find(order: order).amount).to eq (17)
     end
   end
 end
