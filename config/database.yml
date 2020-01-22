@@ -14,7 +14,7 @@ development:
 
 test:
   <<: *defaults
-  database: <%= ENV.fetch('DATABASE_NAME', 'sequra_test') %>
+  database: <%= ENV.fetch('DATABASE_NAME', 'sequra_test2') %>
 
 production:
   <<: *defaults

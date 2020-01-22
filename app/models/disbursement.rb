@@ -13,11 +13,11 @@ class Disbursement < ApplicationRecord
 
   def self.calculate_fee(amount)
     if (1..50).include?(amount)
-      0.1
+      0.01
     elsif (50..300).include?(amount)
-      0.095
+      0.0095
     else
-      0.085
+      0.0085
     end
   end
 end

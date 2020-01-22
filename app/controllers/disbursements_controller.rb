@@ -1,7 +1,8 @@
 class DisbursementsController < ActionController::API
   def week
     if params[:day]
-      disbursements = Disbursement.find_by(created_at: day..(day + 7.days))
+      day = params[:day].to_date
+      disbursements = Disbursement.where(created_at: day..(day + 7.days))
       if params[:merchant_id]
         disbursements.where(merchant_id: params[:merchant_id])
       end

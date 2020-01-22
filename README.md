@@ -1,24 +1,26 @@
-# README
+# Instalation
+Create a .env file in the repository folder with the db user/password
+```
+DATABASE_USERNAME= ""
+DATABASE_PASSWORD= ""
+```
+Run the following commands in the repository folder
+```
+bundle install
+rake db:create
+rake db:migrate
+```
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+If you want contact examples
+download the following files:
 
-Things you may want to cover:
+https://www.dropbox.com/s/wms8dlqzs6bqkul/backend%20challenge%20dataset.zip?dl=0
 
-* Ruby version
+and put the *.json files in the `storage` folder.
+Then:
+```
+rake db:seed
+```
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Usage
+Run `rails s -p 3001` to launch the server
