@@ -23,4 +23,4 @@ rake db:seed
 ```
 
 ## Usage
-Run `rails s -p 3001` to launch the server
+Run `rails s` to launch the server
