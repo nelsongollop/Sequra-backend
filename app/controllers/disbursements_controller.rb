@@ -4,7 +4,7 @@ class DisbursementsController < ActionController::API
       day = params[:day].to_date
       disbursements = Disbursement.where(created_at: day..(day + 7.days))
       if params[:merchant_id]
-        disbursements.where(merchant_id: params[:merchant_id])
+        disbursements = disbursements.where(merchant_id: params[:merchant_id])
       end
       render json: disbursements
     else
