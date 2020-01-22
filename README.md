@@ -24,3 +24,7 @@ rake db:seed
 
 ## Usage
 Run `rails s` to launch the server
+
+##PENDING
+- Request tests
+- Job that runs every monday
