@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :shopper do
-    name { "MyText" }
-    email { "MyText" }
-    NIF { "MyText" }
+    name { "Daenerys Targaryen" }
+    email { "Daenerys@gmail.com" }
+    nif { "AAAAAAAAA" }
   end
 end
