@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2020_01_22_134010) do
   create_table "merchants", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "name"
     t.text "email"
-    t.text "CIF"
+    t.text "cif"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2020_01_22_134010) do
     t.bigint "merchant_id"
     t.bigint "shopper_id"
     t.float "amount"
+    t.timestamp "completed_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["merchant_id"], name: "index_orders_on_merchant_id"
@@ -33,7 +34,7 @@ ActiveRecord::Schema.define(version: 2020_01_22_134010) do
   create_table "shoppers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "name"
     t.text "email"
-    t.text "NIF"
+    t.text "nif"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

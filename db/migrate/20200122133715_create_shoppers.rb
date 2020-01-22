@@ -3,7 +3,7 @@ class CreateShoppers < ActiveRecord::Migration[5.2]
     create_table :shoppers do |t|
       t.text :name
       t.text :email
-      t.text :NIF, unique: true
+      t.text :nif
 
       t.timestamps
     end

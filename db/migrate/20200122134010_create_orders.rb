@@ -4,6 +4,7 @@ class CreateOrders < ActiveRecord::Migration[5.2]
       t.references :merchant, foreign_key: true
       t.references :shopper, foreign_key: true
       t.float :amount
+      t.timestamp :completed_at
 
       t.timestamps
     end
