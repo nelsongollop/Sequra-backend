@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_22_141524) do
+ActiveRecord::Schema.define(version: 2020_01_22_153328) do
 
   create_table "disbursements", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "merchant_id"
     t.float "amount"
-    t.date "start_date"
-    t.date "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "order_id"
     t.index ["merchant_id"], name: "index_disbursements_on_merchant_id"
+    t.index ["order_id"], name: "index_disbursements_on_order_id"
   end
 
   create_table "merchants", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 2020_01_22_141524) do
   end
 
   add_foreign_key "disbursements", "merchants"
+  add_foreign_key "disbursements", "orders"
   add_foreign_key "orders", "merchants"
   add_foreign_key "orders", "shoppers"
 end

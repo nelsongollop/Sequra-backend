@@ -4,8 +4,12 @@ FactoryBot.define do
     shopper { FactoryBot.create :shopper }
     amount { 20 }
 
-    trait :completed
-    completed_at { Date.new(2020, 01, 01) }
+    trait :completed do
+      completed_at { Date.new(2020, 01, 01) }
+    end
 
+    trait :pending do
+      completed_at { "" }
+    end
   end
 end
